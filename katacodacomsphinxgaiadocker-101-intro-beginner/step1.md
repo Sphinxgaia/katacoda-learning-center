@@ -35,12 +35,15 @@ Docker use a set of command to :
 - START/STOP : `docker container start/stop <container_id or container_name>`
 
 Let's start our first container :
-`docker container run sphinxgaia/training-centos:latest`{{execute T1}}
+`docker container run -it sphinxgaia/training-centos:latest`{{execute T1}}
 
 Now we are in a container (Terminal 1) :
+
 `cat /etc/os-release`{{execute T1}}
 `cat /etc/hostname`{{execute T1}}
 
-On the host (Terminal 2) 
-`cat /etc/os-release`{{execute T2}}
-`cat /etc/hostname`{{execute T2}}
+On the host :
+
+`exit`{{execute T1}}
+`cat /etc/os-release`{{execute T1}}
+`cat /etc/hostname`{{execute T1}}
