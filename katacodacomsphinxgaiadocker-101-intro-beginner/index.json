@@ -4,16 +4,32 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Container vs Virtual Machine",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Basics command line",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Basics command line",
         "text": "step3.md"
+      },
+      {
+        "title": "Container PID & Host Process",
+        "text": "step4.md"
+      },
+      {
+        "title": "Container PID & Host Process",
+        "text": "step5.md"
+      },
+      {
+        "title": "Container Logs",
+        "text": "step6.md"
+      },
+      {
+        "title": "Container Logs",
+        "text": "step7.md"
       }
     ],
     "intro": {
