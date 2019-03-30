@@ -7,11 +7,15 @@ Delete all containers
 
 List your container :
 - `docker container ls -a`{{execute T1}}
+- `clear`{{execute T1}}
+- `clear`{{execute T2}}
+- `clear`{{execute T3}}
 
 
 ### Pratice next level
 
 Lunch multiple version of java for our test :
+- `java -version`{{execute T1}}
 - `docker container run --name version1-8 sphinxgaia/training-java:1.8`{{execute T2}}
 - `docker container run --name version1-11 sphinxgaia/training-java:1.11`{{execute T3}}
 
@@ -26,14 +30,33 @@ public class HelloWorld {
 }
 ```
 
-There no special dependencies but we isolate and test 2 versions of Java with the same file.
-
-[Watch file in folder java](https://github.com/Sphinxgaia/training-java/tree/1.8)
-[Watch file in folder java](https://github.com/Sphinxgaia/training-java/tree/1.11)
-
-
 Now you will stress your VM with 2 tests :
 - `htop`{{execute T1}}
 - `docker container run --rm -d --name stress1 --cpus 0.5 sphinxgaia/training-stress:0.1 -c 1 -i 1 -m 1 --vm-bytes 128M -t 30s`{{execute T2}}
 - `docker container run --rm -d --name stress2 --cpus 0.5 sphinxgaia/training-stress:0.1 -c 1 -i 1 -m 1 --vm-bytes 512M -t 100s`{{execute T3}}
 - `docker container ls`{{execute T2}}
+
+Lunch another stress container :
+- `docker container run --rm -d --name stress2 --cpus 0.5 sphinxgaia/training-stress:0.1 -c 1 -i 1 -m 1 --vm-bytes 512M -t 100s`{{execute T3}}
+
+Search stress pid and kill
+- `kill -9 $(pidof stress)`{{copy}}
+- `docker container ls -a`{{execute T2}}
+
+Lunch another stress container and kill him :
+- `docker container run --rm -d --name stress2 --cpus 0.5 sphinxgaia/training-stress:0.1 -c 1 -i 1 -m 1 --vm-bytes 512M -t 1000s`{{execute T3}}
+
+Search stress pid and kill
+- `docker container exec -it $(docker container ls -lq) bash`{{execute T3}}
+- `kill 1`{{execute T3}}
+
+Find your container :
+- `docker container ls -a`{{execute T2}}
+
+---
+
+> You just have test container segmentation and ressources limitation.
+>
+> You know understand, that container process are shared ressources on host, but container offer an isolation. But process are mirrored on host and segmentation doest include kernel isolation by default.
+> 
+> PID 1 in container is mirror from PID of the process on the host.

@@ -1,4 +1,4 @@
-# Welcome in the first tutorial of Docker 101 - for beginners
+# Welcome in my first tutorial of Docker 101 - for beginners
 
 In this set of scenarios, you will understand Docker and containers.
 

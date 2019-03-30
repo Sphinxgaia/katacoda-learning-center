@@ -6,7 +6,8 @@
 
 Docker use a set of command to :
 - Container Interaction :
-  - RUN : `docker container run [OPTIONS] <container_fqdn> [CMD] [ARGS]`
+  - RUN : `docker container run [OPTIONS] <IMAGE_FQDN> [CMD] [ARGS]`
+    - IMAGE_FQDN : we will see this in futur scenario
     - Options :
       - -d : detached mode
       - -i : interactive
@@ -15,7 +16,7 @@ Docker use a set of command to :
       - -u : user change
       - --rm : delete container after stop
       - more : https://docs.docker.com/engine/reference/commandline/container_run/
-  - START/STOP : `docker container start/stop [OPTIONS] <container_id or container_name>`
+  - START/STOP : `docker container start/stop [OPTIONS] <CONTAINER_ID or CONTAINER_NAME>`
     - START OPTIONS :
       - -a : attach container shell to tty
   - List : `docker container ls [OPTIONS]`
@@ -52,6 +53,7 @@ Exit the container and lunch again :
 - `wget https://www.google.fr`{{execute T1}}
 
 > Where is wget ?
+- `exit`{{execute T1}}
 - `docker container ls`{{execute T1}}
 - `docker container ls -a`{{execute T1}}
 

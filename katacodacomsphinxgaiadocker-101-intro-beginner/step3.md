@@ -4,9 +4,11 @@
 
 List your container :
 - `docker container ls -a`{{execute T1}}
+- `clear`{{execute T1}}
+- `clear`{{execute T2}}
 
 Delete all
-- `docker container rm $(docker container ls -aq)`{{execute T1}}
+- `docker container rm -f $(docker container ls -aq)`{{execute T1}}
 
 List your container again :
 - `docker container ls -a`{{execute T1}}
@@ -22,13 +24,13 @@ Now we have a clean docker container list. We will run a container with sharefol
 
 Create a folder named `toto` and create `echo.txt` file :
 - `mkdir toto`{{execute T1}}
-- `echo "toto is my host folder" > echo.txt`{{execute T1}}
-- `docker container run -it --rm -v toto:/tmp sphinxgaia/training-centos:latest`{{execute T2}}
+- `echo "toto is my host folder" > toto/echo.txt`{{execute T1}}
+- `docker container run -it --rm -v /root/toto:/toto sphinxgaia/training-centos:latest`{{execute T2}}
 
 Then edit file in container :
-- `echo "toto is my container : $(cat /etc/hostname) folder too!!!!!" >> echo.txt`{{execute T2}}
+- `echo 'toto is my container : '$(cat /etc/hostname)' folder too!!!!!' >> /toto/echo.txt`{{execute T2}}
 - `more toto/echo.txt`{{execute T1}}
-- `echo "toto is mine!!!!!" >> echo.txt`{{execute T1}}
+- `echo 'toto is mine!!!!!' >> toto/echo.txt`{{execute T1}}
 - `more toto/echo.txt`{{execute T2}}
 
 Volume persists after container stop
@@ -42,7 +44,7 @@ List your container :
 - `docker container ls -a`{{execute T1}}
 
 Lunch a new container :
-- `docker container run -it --rm -v toto:/tmp --name my-container sphinxgaia/training-centos:latest`{{execute T2}}
+- `docker container run -it --rm -v /root/toto:/toto --name my-container sphinxgaia/training-centos:latest`{{execute T2}}
 
 Then detach :
 - <kbd>Ctrl</kbd>+<kbd>P</kbd>+<kbd>Q</kbd>
@@ -57,13 +59,21 @@ Then detach :
 - <kbd>Ctrl</kbd>+<kbd>P</kbd>+<kbd>Q</kbd>
 
 Lunch a new container & add line to text :
-- `docker container run -it --rm -v toto:/tmp --name my-container2 sphinxgaia/training-centos:latest`{{execute T2}}
-- `echo "toto is my container : $(cat /etc/hostname) folder too!!!!!" >> echo.txt`{{execute T2}}
-
+- `docker container run -it --rm -v /root/toto:/toto --name my-container2 sphinxgaia/training-centos:latest`{{execute T2}}
+- `echo 'toto is my container : '$(cat /etc/hostname)' folder too!!!!!' >> echo.txt`{{execute T2}}
+Then exit :
+- `exit`{{execute T2}}
 
 #### Special volume
 
 Lunch a new container & add line to text :
-- `docker container run -it --rm -v toto:/tmp:ro --name my-container3 sphinxgaia/training-centos:latest`{{execute T2}}
-- `echo "toto is my container : $(cat /etc/hostname) folder too!!!!!" >> echo.txt`{{execute T2}}
+- `docker container run -it --rm -v /root/toto:/toto:ro --name my-container3 sphinxgaia/training-centos:latest`{{execute T2}}
+- `echo 'toto is my container : $(cat /etc/hostname) folder too!!!!!' >> /toto/echo.txt`{{execute T2}}
 - `exit`{{execute T2}}
+
+
+---
+
+> Volume can shared between host and container.
+>
+> More, container user are map ID on host, when you are root in container you are root on the shared folder (depending on mount type : rw - read-write or ro - read-only) between host and container.

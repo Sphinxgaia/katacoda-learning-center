@@ -7,6 +7,8 @@ Delete all containers
 
 List your container :
 - `docker container ls -a`{{execute T1}}
+- `clear`{{execute T1}}
+- `clear`{{execute T2}}
 
 ### Introducion
 
@@ -33,8 +35,7 @@ root      5305  5287  0 12:58 pts/0    00:00:00 bash
 > Container process is a mirrored process on host which isolation are in container. Like standard linux, kill PID kill the machine.
 
 
-What happens with 2 containers :
-- `docker container run -it --rm --name my-container sphinxgaia/training-centos:latest`{{execute T2}}
+What happens with another container :
 - `ps -ef`{{execute T2}}
 - `docker container run -it --rm --name my-container2 sphinxgaia/training-centos:latest`{{execute T3}}
 - `ps -ef`{{execute T3}}
