@@ -1,0 +1,41 @@
+{
+  "title": "Docker 101 - Introduction Image \u0026 Logging",
+  "description": "Discover the basics of Docker images \u0026 logging",
+  "time":"45min", 
+  "details": {
+    "steps": [
+      {
+        "title": "Memories and Needs",
+        "text": "step1.md"
+      },
+      {
+        "title": "How to prepare this container environment ?",
+        "text": "step2.md"
+      },
+      {
+        "title": "How to prepare this container environment ?",
+        "text": "step3.md"
+      },
+      {
+        "title": "How to prepare this container environment ?",
+        "text": "step4.md"
+      },
+      {
+        "title": "How to prepare this container environment ?",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
