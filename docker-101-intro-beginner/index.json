@@ -1,6 +1,6 @@
 {
   "title": "Docker 101 - Introduction Overview for Beginners",
-  "description": "Discover basis of Docker and Container (Container Isolation, PID and logs)",
+  "description": "Discover the basics of Docker and Container (Container Isolation, PID and logs)",
   "time":"45min", 
   "details": {
     "steps": [
