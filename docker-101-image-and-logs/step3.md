@@ -10,7 +10,7 @@ Delete all
 
 ### Introduction level 2
 
-Commit command isn't for industrialization grade. How to trace your builds ?
+The Commit method is not an industrialization method. How to follow the evolution of your constructions ?
 
 There are anothers way to build container :
 - Easy way :
@@ -45,7 +45,7 @@ Build from Docker command line :
 
 Write our first Dockerfile :
 - Create a dir 
-  - `mkdir myimage && touch myimage/Dockerfile`{{execute T1}}
+  - `mkdir myimage && touch myimage/Dockerfile && cd myimage`{{execute T1}}
 - Then edit `myimage/Dockerfile` the file and put follow line :
   - Define base image :
     - `FROM sphinxgaia/training-centos:latest`{{copy}}
