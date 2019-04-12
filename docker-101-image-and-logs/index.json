@@ -23,6 +23,10 @@
       {
         "title": "How to prepare this container environment ?",
         "text": "step5.md"
+      },
+      {
+        "title": "Logging Driver Environment ?",
+        "text": "step6.md"
       }
     ],
     "intro": {
