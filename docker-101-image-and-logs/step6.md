@@ -31,10 +31,10 @@ Launch EFK stack :
 - `docker-compose up -d`{{execute T1}}
 
 Generate httpd Access Logs
-- Go to and refresh : https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com:8081/
+- Go to and refresh : https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/
 
 Confirm Logs from Kibana :
-- Go to https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com:5601/
+- Go to https://[[HOST_SUBDOMAIN]]-5601-[[KATACODA_HOST]].environments.katacoda.com/
 - Then, you need to set up the index name pattern for Kibana. 
   - Please specify fluentd-* to Index name or pattern and press Create button.
   - Then, go to Discover tab to seek for the logs. 
