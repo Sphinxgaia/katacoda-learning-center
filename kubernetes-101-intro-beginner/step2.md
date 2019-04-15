@@ -4,7 +4,7 @@ Master components provide the cluster’s control plane. Master components make 
 
 Master components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all master components on the same machine, and do not run user containers on this machine.
 
-![Kubernetes Components](https://github.com/Sphinxgaia/katacoda-learning-center/blob/master/kubernetes-101-intro-beginner/post-ccm-arch.png)
+![Kubernetes Components](https://github.com/Sphinxgaia/katacoda-learning-center/raw/master/kubernetes-101-intro-beginner/post-ccm-arch.png)
 
 
 ### kube-apiserver
