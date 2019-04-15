@@ -16,7 +16,7 @@ Objects are declarations stored in **etcd** to defined apps and other process to
 
 **Ingress Rule :** Ingress, added in Kubernetes v1.1, exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.
 
-![Kubernetes - Objects](Kubernetes.png)
+![Kubernetes - Objects](https://github.com/Sphinxgaia/katacoda-learning-center/blob/master/kubernetes-101-intro-beginner/Kubernetes.png)
 
 ### Other Objects
 
