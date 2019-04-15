@@ -37,6 +37,16 @@ These controllers include:
 
 **Service Account & Token Controllers:** Create default accounts and API access tokens for new namespaces.
 
+
+Install Master :
+- `kubeadm init --kubernetes-version $(kubeadm version -o short)`{{execute HOST1}}
+- `mkdir -p $HOME/.kube`{{execute HOST1}}
+- `cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`{{execute HOST1}}
+- `chown $(id -u):$(id -g) $HOME/.kube/config`{{execute HOST1}}
+
+Test : 
+- `kubectl get node`{{execute HOST1}}
+
 ## Node Components
 
 Node components run on every node, maintaining running pods and providing the Kubernetes runtime environment.
@@ -51,6 +61,10 @@ kube-proxy enables the Kubernetes service abstraction by maintaining network rul
 
 **Container Runtime**
 The container runtime is the software that is responsible for running containers. Kubernetes supports several runtimes: Docker, containerd, cri-o, rktlet and any implementation of the Kubernetes CRI (Container Runtime Interface).
+
+
+Install Worker :
+- Copy & Paste `kubeadm join` command show in HOST1 terminal at end of `kubeadm init`
 
 ---
 
