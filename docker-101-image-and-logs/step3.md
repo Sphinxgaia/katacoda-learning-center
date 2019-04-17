@@ -76,18 +76,20 @@ Build another version of your personnal image :
     - `RUN echo "
 if [ \"$1\" = 'java' ]; then
   exec \"$@\"
-fi >> /entrypoint.sh
-"`{{copy}}
+fi
+" >> /entrypoint.sh`{{copy}}
     - `
 RUN mv ${JAVA_VERSION} /usr/local/ && \
 echo "export JAVA_HOME=/usr/local/${JAVA_VERSION}" >> /etc/profile.d/jdk11.sh  && \
 echo "export PATH=$PATH:/usr/local/${JAVA_VERSION}/bin" >> /etc/profile.d/jdk11.sh
 `{{copy}}
-- Change CMD (in exec mode) :
-  - `CMD ["java","-version"]`{{copy}}
-- Then build and run you container :
-  - `docker image build -t sphinxgaia/training-centos:v1.1 .`{{execute T1}}
-  - `docker container run -it sphinxgaia/training-centos:v1.1`{{execute T1}}
+    - `ENV PATH=$PATH:/usr/local/${JAVA_VERSION}/bin`{{copy}}
+    - `ENV JAVA_HOME=/usr/local/${JAVA_VERSION}`{{copy}}
+    - Change CMD (in exec mode) :
+      - `CMD ["java","-version"]`{{copy}}
+    - Then build and run you container :
+      - `docker image build -t sphinxgaia/training-centos:v1.1 .`{{execute T1}}
+      - `docker container run -it sphinxgaia/training-centos:v1.1`{{execute T1}}
 
 > You have an centos image with wget and java installed
 > What you observe with during the build and layer number :
