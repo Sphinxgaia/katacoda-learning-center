@@ -22,7 +22,8 @@ Now exit and save the image :
 
 Run the new container :
 - `docker container run -it sphinxgaia/training-centos:v1`{{execute T1}}
-- `wget && exit`{{execute T1}}
+- `wget`{{execute T1}}
+- `exit`{{execute T1}}
 - `docker container diff $(docker container ls -lq)`{{execute T1}}
 
 ### Analysis of image :

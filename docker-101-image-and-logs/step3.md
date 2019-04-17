@@ -56,7 +56,7 @@ Write our first Dockerfile :
 
 
 What's wrong ? add -y to install to remove interactive install
-- `RUN yum install wget`{{copy}}
+- `RUN yum install -y wget`{{copy}}
 Then rebuild image :
 - `docker image build -t sphinxgaia/training-centos:v1.0 .`{{execute T1}}
 Run your container :
@@ -72,6 +72,12 @@ Build another version of your personnal image :
 - Edit your Dockerfile and add Java 11 :
     - `ENV JAVA_VERSION=jdk-11.0.2`{{copy}}
     - `RUN wget https://download.java.net/java/GA/jdk11/9/GPL/open${JAVA_VERSION}_linux-x64_bin.tar.gz`{{copy}}
+    - `RUN tar xvf open${JAVA_VERSION}_linux-x64_bin.tar.gz`{{copy}}
+    - `RUN echo "
+if [ \"$1\" = 'java' ]; then
+  exec \"$@\"
+fi >> /entrypoint.sh
+"`{{copy}}
     - `
 RUN mv ${JAVA_VERSION} /usr/local/ && \
 echo "export JAVA_HOME=/usr/local/${JAVA_VERSION}" >> /etc/profile.d/jdk11.sh  && \
