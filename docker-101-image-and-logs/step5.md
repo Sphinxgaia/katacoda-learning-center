@@ -25,7 +25,7 @@ List you image :
 
 Inspect both image and watch the difference (ignore Parent & Id lines) :
 - `docker image inspect sphinxgaia/training-centos:latest | grep sha256`{{execute T1}}
-- `docker image inspect sphinxgaia/training-centos:v1.2 | grep sha256`{{execute T1}}
+- `docker image inspect sphinxgaia/centos:v1.2 | grep sha256`{{execute T1}}
 
 > Docker shares layer between containers to optimize storage and cache. In the production environment, you must know the size of the cache memory and purge it if necessary.
 
@@ -36,7 +36,7 @@ Launch speed test containers :
 - `time docker run -it sphinxgaia/training-sleep:v0.1`{{execute T1}}
 - 
 Clean & Launch speed test containers :
-- `docker container ls -a`{{execute T1}}
+- `docker container rm -f $(docker container ls -aq)`{{execute T1}}
 - `docker image rm sphinxgaia/training-sleep:v0.1`{{execute T1}}
 - `time docker run -it sphinxgaia/training-sleep:latest`{{execute T1}}
 

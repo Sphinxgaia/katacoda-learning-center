@@ -32,10 +32,10 @@ Install Packer and Ansible :
 Then clone demo repo :
 - `git clone https://github.com/Sphinxgaia/training-packer-docker-ansible-demo.git && cd training-packer-docker-ansible-demo`{{execute T1}}
 - `packer build java.json`{{execute T1}}
-- `docker container run -it sphinxgaia/training-centos:v1.2`{{execute T1}}
+- `docker container run -it sphinxgaia/centos:v1.2`{{execute T1}}
 
 Let's analyze your image :
-- `dive sphinxgaia/training-centos:v1.2`{{execute T1}}
+- `dive sphinxgaia/centos:v1.2`{{execute T1}}
 
 > Now you're able to install Java 11 on CentOS container as CentOS hosts (VM, Baremetal, ...)
 > 
