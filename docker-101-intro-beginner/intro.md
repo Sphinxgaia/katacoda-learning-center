@@ -7,3 +7,9 @@ This first tutorial focuses on Docker Introduction :
 - Container isolation
 - Container vs Host (PID and process)
 - Logs
+
+> ![play](play.png) : at end of line, indicates you can click to execute command directly in terminal
+> 
+> ![played](played.png) : at end of line, indicates you already clicked on it
+> 
+> ![copy](copy.png) : at end of line, press to copy text to clipboard

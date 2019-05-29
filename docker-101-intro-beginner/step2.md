@@ -47,7 +47,7 @@ Install wget package :
 - `yum install -y wget`{{execute T1}}
 
 
-Exit the container and lunch again :
+Exit the container and launch again :
 - `exit`{{execute T1}}
 - `docker container run -it sphinxgaia/training-centos:latest`{{execute T1}}
 - `wget https://www.google.fr`{{execute T1}}
