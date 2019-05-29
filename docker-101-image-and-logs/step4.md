@@ -22,9 +22,9 @@ The combination of Ansible (also used for legacy purposes) and Packer (multi env
 
 ### Pratice next level
 
-Create a directory for our build :
+- Create a directory for our build :
   - `cd ~ && mkdir packer && cd packer`{{execute T1}}
-Install Packer and Ansible :
+- Install Packer and Ansible :
   - `wget https://releases.hashicorp.com/packer/1.3.5/packer_1.3.5_linux_amd64.zip && unzip packer_1.3.5_linux_amd64.zip`{{execute T1}}
   - `mv packer /usr/local/bin`{{execute T1}}
   - `pip install ansible`{{execute T1}} 
@@ -38,4 +38,17 @@ Let's analyze your image :
 - `dive sphinxgaia/centos:v1.2`{{execute T1}}
 
 > Now you're able to install Java 11 on CentOS container as CentOS hosts (VM, Baremetal, ...)
+
+
+--- 
+
+> Packer is an interesting tool to use your Ansible's playbook with the standardization of the construction of your docker image, AMI AWS or other image.
 > 
+> Here we use a simple playbook and export the result to a docker image.
+> 
+> There is a lot of solutions to build docker image. We use the most simple with Dockerfile compatible method with :
+> - `docker image build` command
+> - buildah or podman (redhat alternative to docker)
+> - kaniko : docker image builder in Kubernetes
+> - JIB : builder for with mvn like image
+> - bazel : complex layer construction without docker

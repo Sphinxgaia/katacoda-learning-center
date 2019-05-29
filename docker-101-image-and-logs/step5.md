@@ -40,8 +40,13 @@ Clean & Launch speed test containers :
 - `docker image rm sphinxgaia/training-sleep:v0.1`{{execute T1}}
 - `time docker run -it sphinxgaia/training-sleep:latest`{{execute T1}}
 
-> As you see, container take a long time to startup (0m25.420s) in first use case.
+> As you see, container take a long time to startup (~ 0m25.420s) in first use case.
 > After that container uptime is near 0.636s the second time.
 > >
-> In the second use case, startup time is faster (0m21.236s).
+> In the second use case, startup time is faster (~ 0m21.236s).
 > After that container uptime is near 0.635s the second time.
+
+
+---
+
+> In production to accelerate and optimize container start-up and storage, the docker mechanism shares the existing identical layers between containers. But if you have too many layers, starting a new container will be less efficient because of the extraction time of all layers.

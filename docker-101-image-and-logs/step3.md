@@ -94,3 +94,14 @@ echo "export PATH=$PATH:/usr/local/${JAVA_VERSION}/bin" >> /etc/profile.d/jdk11.
 > You have an centos image with wget and java installed
 > What you observe with during the build and layer number :
 >   - `dive sphinxgaia/training-centos:v1.1`{{execute T1}} 
+
+
+--- 
+
+> `docker image build` command doesn't support interactive installation and step in a Dockerfile.
+> 
+> Each RUN in dockerfile generate a static layer. All commands after RUN will execute in this context (export a variable doesn't work in global scope).
+> 
+> You can execute command throught CMD / ENTRYPOINT or RUN with 2 modes :
+> - shell (emulate /bin/sh -c after run commande) you must have a shell in your container
+> - exec ( ["java","-version"] ) - you don't need a shell to execute your command

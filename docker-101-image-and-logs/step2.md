@@ -45,21 +45,24 @@ Quit :
 
 ---
 
+> Container is an Docker image instanciation. When launched, the container add a new layer. All change made in a container are stored in this layer. If you delete container you loose this layer.
 > 
-> Images layers :
+> `docker container diff` show differences between writable layer of the container and images layers.
+>  
+> > Images layers :
+> > 
+> > |  |
+> > |---|
+> > | Last layer |
+> > | bin/libs layer |
+> > | OS Layer |
 > 
-> |  |
-> |---|
-> | Last layer |
-> | bin/libs layer |
-> | OS Layer |
-
 > 
-> Containers layers :
-> 
-> |  |
-> |---|
-> | Writeable layer |
-> | Last layer |
-> | bin/libs layer |
-> | OS Layer |
+> > Containers layers :
+> > 
+> > |  |
+> > |---|
+> > | Writeable layer |
+> > | Last layer |
+> > | bin/libs layer |
+> > | OS Layer |

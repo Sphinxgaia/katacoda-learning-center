@@ -39,3 +39,9 @@ Confirm Logs from Kibana :
   - Please specify fluentd-* to Index name or pattern and press Create button.
   - Then, go to Discover tab to seek for the logs. 
   - As you can see, logs are properly collected into Elasticsearch + Kibana, via Fluentd.
+
+
+---
+
+> Logs and retention is very important in an ephemeral and elactic environment. Docker has native logs export in a multiple format.
+> So you can stream logs from files or export it directly from docker daemon (less storage)
