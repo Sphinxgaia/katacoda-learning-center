@@ -8,8 +8,8 @@ This first tutorial focuses on Docker Introduction :
 - Container vs Host (PID and process)
 - Logs
 
-> ![play](play.png) : at end of line, indicates you can click to execute command directly in terminal
+> ![play](https://github.com/Sphinxgaia/katacoda-learning-center/raw/master/docker-101-intro-beginner/play.png) : at end of line, indicates you can click to execute command directly in terminal
 > 
-> ![played](played.png) : at end of line, indicates you already clicked on it
+> ![played](https://github.com/Sphinxgaia/katacoda-learning-center/raw/master/docker-101-intro-beginner/played.png) : at end of line, indicates you already clicked on it
 > 
-> ![copy](copy.png) : at end of line, press to copy text to clipboard
+> ![copy](https://github.com/Sphinxgaia/katacoda-learning-center/raw/master/docker-101-intro-beginner/copy.png) : at end of line, press to copy text to clipboard

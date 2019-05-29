@@ -26,3 +26,4 @@ Language & Comparison Container vs VM :
 | 1 - 2 hours (without entreprise process) | **Build speed** | 10min |
 | x | **ISO Prod** | v |
 | 10 GB | **Size** | 200 MB |
+

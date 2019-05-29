@@ -49,3 +49,12 @@ What happens with another container :
   - `ps -ef`{{execute T3}}
 - In `Terminal 1`
   - `ps -ef`{{execute T1}}
+
+
+---
+
+> In a container, all process are isolated from other container. But they are mirrored on the host (container isolation is a chroot and cgroup isolation for a process).
+> 
+> Kill process on the host or in the container will end the container.
+> 
+> /!\ Be carefull, if a container has more than 1 process, PID 1 will be the master process and will killed all other process in a container when it stops

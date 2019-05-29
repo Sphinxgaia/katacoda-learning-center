@@ -3,19 +3,23 @@
 ### Clean
 
 List your container :
-- `docker container ls -a`{{execute T1}}
-- `clear`{{execute T1}}
+- In `Terminal 1`
+  - `docker container ls -a`{{execute T1}}
+  - `clear`{{execute T1}}
 - In a second terminal `Terminal 2`, if not present it will appear
   - `clear`{{execute T2}}
 
 Delete all
-- `docker container rm -f $(docker container ls -aq)`{{execute T1}}
+- In `Terminal 1`
+  - `docker container rm -f $(docker container ls -aq)`{{execute T1}}
 
 List your container again :
-- `docker container ls -a`{{execute T1}}
+- In `Terminal 1`
+  - `docker container ls -a`{{execute T1}}
 
 List your docker images :
-- `docker image ls`{{execute T1}}
+- In `Terminal 1`
+  - `docker image ls`{{execute T1}}
 
 ### Pratice next level
 
@@ -84,11 +88,17 @@ Launch a new container & add line to text :
 - In `Terminal 2`
   - `docker container run -it --rm -v /root/toto:/toto:ro --name my-container3 sphinxgaia/training-centos:latest`{{execute T2}}
   - `echo 'toto is my container : $(cat /etc/hostname) folder too!!!!!' >> /toto/echo.txt`{{execute T2}}
+- In `Terminal 1`
+  - `echo 'toto is mine!!!!!' >> toto/echo.txt`{{execute T1}}
+- In `Terminal 2`
+  - `more toto/echo.txt`{{execute T2}}
   - `exit`{{execute T2}}
 
 
 ---
 
-> Volume can shared between host and container.
+> Volume can shared between host and container. Both can write in the echo.txt file without any problem.
+> 
+> On Special volume, as you see, we mount volume with :ro extension that mounted volume in read-only mode in the container but not on host
 >
 > More, container user are map ID on host, when you are root in container you are root on the shared folder (depending on mount type : rw - read-write or ro - read-only) between host and container.

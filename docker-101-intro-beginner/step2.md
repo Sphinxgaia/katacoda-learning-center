@@ -58,7 +58,15 @@ Exit the container and launch again :
 - `docker container ls -a`{{execute T1}}
 
 Restart an old container :
-- `docker container start -a <container_id where we installed wget`{{copy}}
+- `docker container start -a <container_id where we installed wget>`{{copy}}
 
 Then try:
 - `wget https://www.google.fr`{{execute T1}}
+- `exit`{{execute T1}}
+
+
+---
+
+As you see, the container :
+- hostname is an hexadecimal name (if you pay attention, it is the container id when you execute a `docker container ls`)
+- `docker container run` command instantiate a new container on every execution
