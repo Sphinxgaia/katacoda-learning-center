@@ -39,13 +39,15 @@ These controllers include:
 
 
 Install Master :
-- `kubeadm init --kubernetes-version $(kubeadm version -o short)`{{execute HOST1}}
-- `mkdir -p $HOME/.kube`{{execute HOST1}}
-- `cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`{{execute HOST1}}
-- `chown $(id -u):$(id -g) $HOME/.kube/config`{{execute HOST1}}
+- In the `HOST 1 Terminal`
+  - `kubeadm init --kubernetes-version $(kubeadm version -o short)`{{execute HOST1}}
+  - `mkdir -p $HOME/.kube`{{execute HOST1}}
+  - `cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`{{execute HOST1}}
+  - `chown $(id -u):$(id -g) $HOME/.kube/config`{{execute HOST1}}
 
 Test : 
-- `kubectl get node`{{execute HOST1}}
+- In the `HOST 1 Terminal`
+  - `kubectl get node`{{execute HOST1}}
 
 ## Node Components
 
@@ -65,6 +67,7 @@ The container runtime is the software that is responsible for running containers
 
 Install Worker :
 - Copy & Paste `kubeadm join` command show in HOST1 terminal at end of `kubeadm init`
+- Past in the `HOST 2 Terminal`
 
 ---
 
