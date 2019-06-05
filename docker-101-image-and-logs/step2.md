@@ -32,12 +32,12 @@ Install an OCI image analyzer
 - `wget https://github.com/wagoodman/dive/releases/download/v0.7.1/dive_0.7.1_linux_amd64.deb`{{execute T1}}
 - `apt install ./dive_0.7.1_linux_amd64.deb`{{execute T1}}
 
-Run againt first image : 
+Launch dive with the first image : 
 - `dive sphinxgaia/training-centos:latest`{{execute T1}}
 Quit : 
 - <kbd>Ctrl</kbd>+<kbd>C</kbd>
 
-Run againt first image : 
+Launch dive with the second image : 
 - `dive sphinxgaia/training-centos:v1`{{execute T1}}
 Quit : 
 - <kbd>Ctrl</kbd>+<kbd>C</kbd>

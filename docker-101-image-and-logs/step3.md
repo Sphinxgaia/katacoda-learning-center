@@ -73,13 +73,8 @@ Build another version of your personnal image :
     - `ENV JAVA_VERSION=jdk-11.0.2`{{copy}}
     - `RUN wget https://download.java.net/java/GA/jdk11/9/GPL/open${JAVA_VERSION}_linux-x64_bin.tar.gz`{{copy}}
     - `RUN tar xvf open${JAVA_VERSION}_linux-x64_bin.tar.gz`{{copy}}
-    - `RUN echo "
-if [ \"$1\" = 'java' ]; then
-  exec \"$@\"
-fi
-" >> /entrypoint.sh`{{copy}}
-    - `
-RUN mv ${JAVA_VERSION} /usr/local/ && \
+    - `RUN echo -e "\n if [ \"$1\" = 'java' ]; then \n\n   exec \"$@\" \n fi \n\n " >> /entrypoint.sh`{{copy}}
+    - `RUN mv ${JAVA_VERSION} /usr/local/ && \
 echo "export JAVA_HOME=/usr/local/${JAVA_VERSION}" >> /etc/profile.d/jdk11.sh  && \
 echo "export PATH=$PATH:/usr/local/${JAVA_VERSION}/bin" >> /etc/profile.d/jdk11.sh
 `{{copy}}
